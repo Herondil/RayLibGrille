@@ -1,6 +1,7 @@
 ﻿//définir un symbole
 #define DEBUG
 
+using static Raylib_cs.Raylib;
 using Raylib_cs;
 using RayLibGrille;
 
@@ -46,6 +47,14 @@ while (!Raylib.WindowShouldClose())
 
     //dessin des objets de la scène
     main.Render();
+
+    unsafe { 
+
+    Image WizIdle = LoadImage("imgs/Sprites/Idle.png");
+    ImageCrop( &WizIdle, new Rectangle(0, 0, WizIdle.Width / 8, WizIdle.Height));
+
+    }
+
     Raylib.DrawLine(100, 0, 100, 999, Color.BLACK);
     Raylib.DrawLine(200, 0, 200, 999, Color.BLACK);
     Raylib.DrawLine(300, 0, 300, 999, Color.BLACK);
